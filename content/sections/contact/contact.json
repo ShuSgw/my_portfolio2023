@@ -1,0 +1,12 @@
+{
+  "name": "Gatsby Starter For Portfolio Minimal",
+  "description": "If you have any problems with this theme, create an issue in the GitHub repository.",
+  "image": {
+    "src": "../../images/favicon.png",
+    "alt": "sgw logo"
+  },
+  "socialProfiles": {
+    "from": ["LinkedIn", "Medium", "Github", "Mail"],
+    "showIcons": true
+  }
+}

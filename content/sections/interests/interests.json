@@ -1,0 +1,79 @@
+{
+  "interests": [
+    {
+      "label": "HTML/CSS",
+      "image": {
+        "src": "../../images/html_css.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "JavaScript (ES6)",
+      "image": {
+        "src": "../../images/js.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "PHP",
+      "image": {
+        "src": "../../images/php.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "Sass",
+      "image": {
+        "src": "../../images/sass.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "jQuery",
+      "image": {
+        "src": "../../images/jq.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "React",
+      "image": {
+        "src": "../../images/react.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "Gatsby.js",
+      "image": {
+        "src": "../../images/gatsby.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "WordPress",
+      "image": {
+        "src": "../../images/wordpress.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "Laravel",
+      "image": {
+        "src": "../../images/laravel.png",
+        "alt": ""
+      }
+    },
+    {
+      "label": "Wordmove",
+      "image": {
+        "src": "../../images/wordmove.png",
+        "alt": ""
+      }
+    }
+  ],
+  "button": {
+    "visible": true,
+    "label": "+ Load More",
+    "initiallyShownInterests": 5
+  }
+}

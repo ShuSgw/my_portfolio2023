@@ -1,0 +1,22 @@
+{
+  "intro": "Hello",
+  "heroPhoto": {
+    "src": "../../images/face.png",
+    "alt": "My Photo"
+  },
+  "image": {
+    "src": "../../images/waving-hand.png",
+    "alt": "Waving Hand Emoji"
+  },
+  "title": "I'm Shuhei,",
+  "subtitle": {
+    "prefix": "a web developer",
+    "highlight": " based in Vancouver",
+    "suffix": "."
+  },
+  "description": "Specialized in WordPress theme and front-end development",
+  "socialProfiles": {
+    "from": ["LinkedIn", "Github"],
+    "showIcons": true
+  }
+}
