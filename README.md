@@ -7,3 +7,7 @@
 ```sh
 gatsby develop
 ```
+
+## packages
+
+- [react-emojis](https://www.sejuku.net/blog/)
