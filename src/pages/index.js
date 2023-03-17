@@ -5,9 +5,12 @@ import {graphql} from "gatsby";
 import {useI18next, useTranslation} from "gatsby-plugin-react-i18next";
 import {Animation, HeroSection} from "gatsby-theme-portfolio-minimal";
 
-import Hero from "../components/hero/Hero";
+import Hero from "../components/frontSections/hero/Hero";
 import Layout from "../components/global/layout/Layout";
-import Skills from "../components/skills/Skills";
+import Skills from "../components/frontSections/skills/Skills";
+import About from "../components/frontSections/about/About";
+
+import Experience from "../components/frontSections/experience/Experience";
 
 const IndexPage = () => {
   const {languages, originalPath} = useI18next();
@@ -20,11 +23,15 @@ const IndexPage = () => {
   };
 
   return (
-    <Layout langInfo={langInfo}>
-      {/* <div className="text-black dark:text-white">{t("titleTxt")}</div> */}
-      <Hero txtObj={t("titleTxt")} />
-      <Skills />
-    </Layout>
+    <>
+      <Layout langInfo={langInfo}>
+        {/* <div className="text-black dark:text-white">{t("titleTxt")}</div> */}
+        <Hero txtObj={t("titleTxt")} />
+        <About />
+        <Skills />
+        <Experience />
+      </Layout>
+    </>
   );
 };
 

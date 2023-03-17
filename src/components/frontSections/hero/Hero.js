@@ -8,16 +8,16 @@ const Hero = ({txtObj}) => {
   return (
     <Animation>
       <div className="text-black dark:text-white flex flex-col items-center md:flex-row md:justify-between md:space-x-10">
-        <div class="flex-initial w-4/5 max-w-xs md:w-2/5 md:max-w-none">
+        <div className="flex-initial w-4/5 max-w-xs md:w-2/5 md:max-w-none">
           <StaticImage
-            src="../../../content/images/face.png"
+            src="../../../../content/images/face.png"
             width={600}
             alt="Shiva"
             placeholder="blurred"
             quality="40"
           />
         </div>
-        <div class="w-full flex-initial mt-5 md:mt-0 md:w-3/5">
+        <div className="w-full flex-initial mt-5 md:mt-0 md:w-3/5">
           <div className="text-5xl font-extrabold leading-tighter tracking-tighter mb-1 md:text-6xl">
             Hello <Emoji className="animate-spin" emoji="waving-hand" />
           </div>

@@ -1,40 +1,6 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/locales`,
-        name: `locale`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-react-i18next`,
-      options: {
-        localeJsonSourceName: `locale`,
-        languages: [`en`, `ja`],
-        defaultLanguage: `en`,
-      },
-    },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    "gatsby-plugin-dark-mode",
-    "gatsby-plugin-postcss",
-    {
-      resolve: "gatsby-plugin-htaccess",
-      options: {},
-      RewriteBase: "/public/",
-      https: true,
-      www: true,
-      SymLinksIfOwnerMatch: true,
-      host: "shagawa.work",
-      ErrorDocument: `
-          ErrorDocument 401 /error_pages/401.html
-          ErrorDocument 404 /error_pages/404.html
-          ErrorDocument 500 /error_pages/500.html
-        `,
-    },
-    {
       resolve: "gatsby-theme-portfolio-minimal",
       options: {
         manifestSettings: {
@@ -57,6 +23,47 @@ module.exports = {
         //     environments: ["production", "development"] // Default ["production"]
         // }
       },
+    },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    "gatsby-plugin-dark-mode",
+    "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `companyLogo`,
+        path: `${__dirname}/src/images/companyLogo`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`,
+        languages: [`en`, `ja`],
+        defaultLanguage: `en`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-htaccess",
+      options: {},
+      RewriteBase: "/public/",
+      https: true,
+      www: true,
+      SymLinksIfOwnerMatch: true,
+      host: "shagawa.work",
+      ErrorDocument: `
+          ErrorDocument 401 /error_pages/401.html
+          ErrorDocument 404 /error_pages/404.html
+          ErrorDocument 500 /error_pages/500.html
+        `,
     },
   ],
 };
