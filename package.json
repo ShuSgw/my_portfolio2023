@@ -25,6 +25,8 @@
     "react-emojis": "^1.0.6",
     "react-i18next": "^12.2.0",
     "react-icons": "^4.8.0",
+    "react-side-bar": "^1.0.4",
+    "react-sidebar": "^3.0.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

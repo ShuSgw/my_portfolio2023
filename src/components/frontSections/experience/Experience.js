@@ -20,7 +20,7 @@ const Experience = () => {
     {
       company: "Mellow Plus Creative Inc.",
       jobTitle: "Web developer",
-      period: "Feb 2021 - Mar 2022",
+      period: "Jun 2020 - Mar 2022",
       area: "Vancouver, British Columbia, Canada",
       srcImg: "mellow_Logo",
       description:
@@ -47,10 +47,8 @@ const Experience = () => {
   ];
 
   return (
-    <section className="relative rounded-xl overflow-auto">
-      <h2 className="font-header text-4xl sm:text-5xl lg:text-4xl">
-        Experiences
-      </h2>
+    <section className="relative rounded-xl overflow-auto pt-16 md:pt-20">
+      <h2 className="font-header text-4xl lg:text-4xl">Experiences</h2>
       {experienceObj.map((eachExp) => (
         <TimelineItem key={uuidv4()} eachExp={eachExp} />
       ))}

@@ -12,8 +12,8 @@ import {BsWordpress, BsGit} from "react-icons/bs";
 
 const Skills = () => {
   return (
-    <section className="relative rounded-xl overflow-auto">
-      <h2 className="font-header text-4xl sm:text-5xl lg:text-4xl">Skills</h2>
+    <section className="relative rounded-xl overflow-auto pt-16 md:pt-20">
+      <h2 className="font-header text-4xl lg:text-4xl">Skills</h2>
       <div className="pt-6 mx-auto bg-white min-w-0 dark:bg-black dark:highlight-white/5">
         <div className="overflow-x-auto flex gap-8 pb-3">
           <div className="flex flex-col items-center justify-center">
