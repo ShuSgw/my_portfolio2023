@@ -1,108 +1,68 @@
 <div
-  className="container flex flex-col items-center py-16 md:py-20 lg:flex-row"
+  class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900"
 >
-  <div className="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
-    <h2
-      className="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
-    >
-      Who am I?
-    </h2>
-    <h4
-      className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
-    >
-      I'm Christy Smith, a Web Designer &amp; Photographer
-    </h4>
-    <p className="pt-6 font-body leading-relaxed text-grey-20">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-    <div
-      className="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start"
-    >
-      <div className="flex items-center justify-center sm:justify-start">
-        <p className="font-body text-lg font-semibold uppercase text-grey-20">
-          Connect with me
-        </p>
-        <div className="hidden sm:block">
-          <i className="bx bx-chevron-right text-2xl text-primary"></i>
-        </div>
-      </div>
-      <div
-        className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0"
-      >
-        <a href="/">
-          <i
-            className="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"
-          ></i>
-        </a>
-        <a href="/" className="pl-4">
-          <i
-            className="bx bxl-twitter text-2xl text-primary hover:text-yellow"
-          ></i>
-        </a>
-        <a href="/" className="pl-4">
-          <i
-            className="bx bxl-dribbble text-2xl text-primary hover:text-yellow"
-          ></i>
-        </a>
-        <a href="/" className="pl-4">
-          <i
-            className="bx bxl-linkedin text-2xl text-primary hover:text-yellow"
-          ></i>
-        </a>
-        <a href="/" className="pl-4">
-          <i
-            className="bx bxl-instagram text-2xl text-primary hover:text-yellow"
-          ></i>
-        </a>
-      </div>
+  <div class="text-gray-100 text-xl">
+    <div class="p-2.5 mt-1 flex items-center">
+      <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
+      <h1 class="font-bold text-gray-200 text-[15px] ml-3">TailwindCSS</h1>
+      <i
+        class="bi bi-x cursor-pointer ml-28 lg:hidden"
+        onclick="openSidebar()"
+      ></i>
+    </div>
+    <div class="my-2 bg-gray-600 h-[1px]"></div>
+  </div>
+  <div
+    class="p-2.5 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white"
+  >
+    <i class="bi bi-search text-sm"></i>
+    <input
+      type="text"
+      placeholder="Search"
+      class="text-[15px] ml-4 w-full bg-transparent focus:outline-none"
+    />
+  </div>
+  <div
+    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+  >
+    <i class="bi bi-house-door-fill"></i>
+    <span class="text-[15px] ml-4 text-gray-200 font-bold">Home</span>
+  </div>
+  <div
+    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+  >
+    <i class="bi bi-bookmark-fill"></i>
+    <span class="text-[15px] ml-4 text-gray-200 font-bold">Bookmark</span>
+  </div>
+  <div class="my-4 bg-gray-600 h-[1px]"></div>
+  <div
+    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+    onclick="dropdown()"
+  >
+    <i class="bi bi-chat-left-text-fill"></i>
+    <div class="flex justify-between w-full items-center">
+      <span class="text-[15px] ml-4 text-gray-200 font-bold">Chatbox</span>
+      <span class="text-sm rotate-180 rotate-0" id="arrow">
+        <i class="bi bi-chevron-down"></i>
+      </span>
     </div>
   </div>
-  <div className="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-    <div>
-      <div className="flex items-end justify-between">
-        <h4 className="font-body font-semibold uppercase text-black">
-          HTML &amp; CSS
-        </h4>
-        <h3 className="font-body text-3xl font-bold text-primary">85%</h3>
-      </div>
-      <div className="mt-2 h-3 w-full rounded-full bg-lila">
-        <div className="h-3 rounded-full bg-primary" style="width: 85%"></div>
-      </div>
-    </div>
-    <div className="pt-6">
-      <div className="flex items-end justify-between">
-        <h4 className="font-body font-semibold uppercase text-black">Python</h4>
-        <h3 className="font-body text-3xl font-bold text-primary">70%</h3>
-      </div>
-      <div className="mt-2 h-3 w-full rounded-full bg-lila">
-        <div className="h-3 rounded-full bg-primary" style="width: 70%"></div>
-      </div>
-    </div>
-    <div className="pt-6">
-      <div className="flex items-end justify-between">
-        <h4 className="font-body font-semibold uppercase text-black">
-          Javascript
-        </h4>
-        <h3 className="font-body text-3xl font-bold text-primary">98%</h3>
-      </div>
-      <div className="mt-2 h-3 w-full rounded-full bg-lila">
-        <div className="h-3 rounded-full bg-primary" style="width: 98%"></div>
-      </div>
-    </div>
-    <div className="pt-6">
-      <div className="flex items-end justify-between">
-        <h4 className="font-body font-semibold uppercase text-black">Figma</h4>
-        <h3 className="font-body text-3xl font-bold text-primary">91%</h3>
-      </div>
-      <div className="mt-2 h-3 w-full rounded-full bg-lila">
-        <div className="h-3 rounded-full bg-primary" style="width: 91%"></div>
-      </div>
-    </div>
+  <div
+    class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold hidden"
+    id="submenu"
+  >
+    <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">Social</h1>
+    <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+      Personal
+    </h1>
+    <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+      Friends
+    </h1>
+  </div>
+  <div
+    class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+  >
+    <i class="bi bi-box-arrow-in-right"></i>
+    <span class="text-[15px] ml-4 text-gray-200 font-bold">Logout</span>
   </div>
 </div>
