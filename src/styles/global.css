@@ -6,7 +6,6 @@ body.dark {
   @apply bg-black;
 }
 
-/* lang */
 /* aria-current="page" */
 .langBtn a[aria-current*="page"] {
   opacity: 0.5;

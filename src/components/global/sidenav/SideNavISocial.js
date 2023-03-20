@@ -1,22 +1,22 @@
 import React from "react";
-import {AiFillHome} from "react-icons/ai";
-import {RiTaskFill} from "react-icons/ri";
-import {IoMdMail} from "react-icons/io";
+import {
+  AiFillFacebook,
+  AiFillLinkedin,
+  AiFillTwitterSquare,
+} from "react-icons/ai";
 
-import {Link} from "gatsby";
-
-const SideNavItem = ({link}) => {
+const SideNavISocial = ({link}) => {
   const chooseIcon = (whichIcon) => {
     let theIcon = "";
     switch (whichIcon) {
-      case "Home":
-        theIcon = <AiFillHome />;
+      case "Facebook":
+        theIcon = <AiFillFacebook />;
         break;
-      case "Works":
-        theIcon = <RiTaskFill />;
+      case "LinkedIn":
+        theIcon = <AiFillLinkedin />;
         break;
-      case "Contact":
-        theIcon = <IoMdMail />;
+      case "Twitter":
+        theIcon = <AiFillTwitterSquare />;
         break;
       default:
     }
@@ -25,15 +25,17 @@ const SideNavItem = ({link}) => {
 
   return (
     <>
-      <Link
-        to={link.route}
+      <a
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-2xl md:text-lg py-5 flex items-center px-4 duration-300 cursor-pointer text-black hover:text-white hover:bg-black"
       >
         {chooseIcon(link.title)}
         <span className="ml-4 font-bold">{link.title}</span>
-      </Link>
+      </a>
     </>
   );
 };
 
-export default SideNavItem;
+export default SideNavISocial;

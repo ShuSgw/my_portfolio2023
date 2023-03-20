@@ -1,10 +1,9 @@
 import React from "react";
 import SideNavItem from "./SideNavItem";
+import SideNavISocial from "./SideNavISocial";
 
 import {AiOutlineCloseSquare} from "react-icons/ai";
 import {v4 as uuidv4} from "uuid";
-
-// stop using this component
 
 const SideNav = ({slideToggle}) => {
   const lniks = [
@@ -21,9 +20,20 @@ const SideNav = ({slideToggle}) => {
       title: `Contact`,
     },
   ];
+  const exLniks = [
+    {
+      url: `https://www.linkedin.com/in/shusgw/`,
+      title: `LinkedIn`,
+    },
+    {
+      url: `https://twitter.com/shusgw`,
+      title: `Twitter`,
+    },
+  ];
+
   return (
-    <div className="bg-white h-full">
-      <div className="sidebar top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center">
+    <div className="bg-white h-full z-50">
+      <div className="sidebar top-0 bottom-0 lg:left-0 p-2 w-[250px] md:w-[400px] overflow-y-auto text-center">
         <div className="text-black-100 text-xl">
           <div className="p-2.5 mt-1 flex items-center justify-end">
             <AiOutlineCloseSquare
@@ -35,18 +45,17 @@ const SideNav = ({slideToggle}) => {
           </div>
           <div className="my-2 bg-gray-600 h-[1px]"></div>
         </div>
-        {lniks.map((link) => (
-          <SideNavItem key={uuidv4()} link={link} />
-        ))}
-
-        {/* <div className="p-2.5 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white">
-          <BsWordpress className="text-black" />
-          <input
-            type="text"
-            placeholder="Search"
-            className="text-[15px] ml-4 w-full bg-transparent focus:outline-none"
-          />
-        </div> */}
+        <ul className="">
+          {lniks.map((link) => (
+            <SideNavItem key={uuidv4()} link={link} />
+          ))}
+        </ul>
+        <div class="my-2 bg-gray-600 h-[1px]"></div>
+        <ul className="">
+          {exLniks.map((exLink) => (
+            <SideNavISocial key={uuidv4()} link={exLink} />
+          ))}
+        </ul>
       </div>
     </div>
   );

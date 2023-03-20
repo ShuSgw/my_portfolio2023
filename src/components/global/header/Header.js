@@ -7,8 +7,8 @@ import GlobalNav from "../globalNav/GlobalNav";
 
 const Header = ({langInfo, slideToggle}) => {
   return (
-    <header className="bg-green-700">
-      <div className="flex items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
+    <header className="fixed w-full bg-green-500" style={{zIndex: 1}}>
+      <div className="flex items-center justify-between max-w-4xl px-4 mx-auto">
         <Logo />
         <div className="flex items-center justify-center gap-5">
           <GlobalNav langInfo={langInfo} />
