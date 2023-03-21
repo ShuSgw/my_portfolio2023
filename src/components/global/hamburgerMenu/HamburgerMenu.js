@@ -7,7 +7,7 @@ const HamburgerMenu = ({slideToggle}) => {
         slideToggle(true);
       }}
     >
-      <IoIosMenu className="text-4xl text-white cursor-pointer" />
+      <IoIosMenu className="text-4xl cursor-pointer" />
     </div>
   );
 };

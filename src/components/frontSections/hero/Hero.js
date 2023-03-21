@@ -1,13 +1,12 @@
 import React from "react";
 import {StaticImage} from "gatsby-plugin-image";
 
-import {Animation, Section} from "gatsby-theme-portfolio-minimal";
 import Emoji from "react-emojis";
 
 const Hero = ({txtObj}) => {
   return (
-    <Animation>
-      <div className="text-black dark:text-white flex flex-col items-center md:flex-row md:justify-between md:space-x-10">
+    <>
+      <div className="flex flex-col items-center md:flex-row md:justify-between md:space-x-10">
         <div className="flex-initial w-4/5 max-w-xs md:w-2/5 md:max-w-none">
           <StaticImage
             src="../../../../content/images/face.png"
@@ -30,7 +29,7 @@ const Hero = ({txtObj}) => {
           <p>{txtObj}</p>
         </div>
       </div>
-    </Animation>
+    </>
   );
 };
 

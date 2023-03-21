@@ -22,6 +22,11 @@ const SideNav = ({slideToggle}) => {
   ];
   const exLniks = [
     {
+      url: `https://github.com/ShuSgw`,
+      title: `Github`,
+    },
+    ,
+    {
       url: `https://www.linkedin.com/in/shusgw/`,
       title: `LinkedIn`,
     },
@@ -32,9 +37,9 @@ const SideNav = ({slideToggle}) => {
   ];
 
   return (
-    <div className="bg-white h-full z-50">
+    <div className="bg-white h-full z-50 dark:bg-black text-gray-900 dark:text-white">
       <div className="sidebar top-0 bottom-0 lg:left-0 p-2 w-[250px] md:w-[400px] overflow-y-auto text-center">
-        <div className="text-black-100 text-xl">
+        <div className="text-xl">
           <div className="p-2.5 mt-1 flex items-center justify-end">
             <AiOutlineCloseSquare
               className="text-4xl cursor-pointer"
@@ -50,7 +55,7 @@ const SideNav = ({slideToggle}) => {
             <SideNavItem key={uuidv4()} link={link} />
           ))}
         </ul>
-        <div class="my-2 bg-gray-600 h-[1px]"></div>
+        <div className="my-2 bg-gray-600 h-[1px]"></div>
         <ul className="">
           {exLniks.map((exLink) => (
             <SideNavISocial key={uuidv4()} link={exLink} />

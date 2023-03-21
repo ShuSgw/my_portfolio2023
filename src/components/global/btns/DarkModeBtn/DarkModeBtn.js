@@ -5,7 +5,7 @@ import {BsFillSunFill} from "react-icons/bs";
 import Toggle from "react-toggle";
 const ThemeBtn = () => {
   return (
-    <>
+    <div>
       <ThemeToggler>
         {({theme, toggleTheme}) => (
           <Toggle
@@ -18,7 +18,7 @@ const ThemeBtn = () => {
           />
         )}
       </ThemeToggler>
-    </>
+    </div>
   );
 };
 

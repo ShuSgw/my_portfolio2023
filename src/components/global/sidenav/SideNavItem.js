@@ -27,7 +27,7 @@ const SideNavItem = ({link}) => {
     <>
       <Link
         to={link.route}
-        className="text-2xl md:text-lg py-5 flex items-center px-4 duration-300 cursor-pointer text-black hover:text-white hover:bg-black"
+        className="text-2xl md:text-lg py-5 flex items-center px-4 duration-300 cursor-pointer hover:text-white hover:bg-black dark:hover:text-black dark:hover:bg-white"
       >
         {chooseIcon(link.title)}
         <span className="ml-4 font-bold">{link.title}</span>

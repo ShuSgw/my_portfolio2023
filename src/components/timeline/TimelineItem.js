@@ -37,7 +37,7 @@ const TimelineItem = ({eachExp}) => {
           <img
             width={120}
             src={`${filterTheImage(qrryImageSorce, eachExp.srcImg)}`}
-            alt=""
+            alt="Company Logo"
           />
         </div>
         <div className="md:w-4/5">
@@ -57,9 +57,7 @@ const TimelineItem = ({eachExp}) => {
                   <span className="">{eachExp.period}</span>
                 </div>
                 <div className="pt-2">
-                  <span className="block font-body text-black">
-                    {eachExp.description}
-                  </span>
+                  <span className="block font-body">{eachExp.description}</span>
                 </div>
               </div>
             </div>

@@ -8,7 +8,7 @@ const LangBtn = ({langInfo}) => {
       {langInfo.languages.map((lng) => (
         <LangLink
           key={lng}
-          className="text-white no-underline uppercase"
+          className="no-underline uppercase"
           to={langInfo.originalPath}
           language={lng}
         >
