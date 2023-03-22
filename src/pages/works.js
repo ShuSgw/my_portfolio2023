@@ -20,7 +20,7 @@ const Works = () => {
       <Layout langInfo={langInfo}>
         <div className="font-bold font-header text-4xl lg:text-4xl">Works</div>
         <p className="pt-6 font-body leading-relaxed text-grey-20">
-          Comming soon
+          {t("worksPage")}
         </p>
       </Layout>
     </>

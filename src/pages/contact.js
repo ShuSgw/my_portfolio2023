@@ -3,12 +3,7 @@ import "../styles/global.css";
 import {graphql} from "gatsby";
 import {useI18next, useTranslation} from "gatsby-plugin-react-i18next";
 
-import Hero from "../components/frontSections/hero/Hero";
 import Layout from "../components/global/layout/Layout";
-import Skills from "../components/frontSections/skills/Skills";
-import About from "../components/frontSections/about/About";
-
-import Experience from "../components/frontSections/experience/Experience";
 
 const Contact = () => {
   const {languages, originalPath} = useI18next();
@@ -27,7 +22,7 @@ const Contact = () => {
           Contact
         </div>
         <p className="pt-6 font-body leading-relaxed text-grey-20">
-          Comming Soon
+          {t("contactPage")}
         </p>
       </Layout>
     </>

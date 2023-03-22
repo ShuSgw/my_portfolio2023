@@ -3,7 +3,7 @@ import {StaticImage} from "gatsby-plugin-image";
 
 import Emoji from "react-emojis";
 
-const Hero = ({txtObj}) => {
+const Hero = ({subHead}) => {
   return (
     <>
       <div className="flex flex-col items-center md:flex-row md:justify-between md:space-x-10">
@@ -26,7 +26,7 @@ const Hero = ({txtObj}) => {
           <div className="max-w-3xl mb-3 text-2xl font-bold">
             a web developer based in Vancouver.
           </div>
-          <p>{txtObj}</p>
+          <p>{subHead}</p>
         </div>
       </div>
     </>

@@ -12,7 +12,6 @@ import Experience from "../components/frontSections/experience/Experience";
 
 const IndexPage = () => {
   const {languages, originalPath} = useI18next();
-  console.log(originalPath);
   const {t} = useTranslation();
 
   const langInfo = {
@@ -23,10 +22,12 @@ const IndexPage = () => {
   return (
     <>
       <Layout langInfo={langInfo}>
-        <Hero txtObj={t("titleTxt")} />
-        <About />
+        <Hero subHead={t("frontPage.subHead")} />
+        <About aboutMe={t("frontPage.aboutMe")} />
         <Skills />
-        <Experience />
+        <Experience
+          timelines={t("frontPage.timeline", {returnObjects: true})}
+        />
       </Layout>
     </>
   );
