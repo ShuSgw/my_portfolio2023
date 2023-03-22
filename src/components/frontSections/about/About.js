@@ -14,7 +14,7 @@ const About = ({aboutMe}) => {
         <StaticImage
           src="../../../../content/images/charles-deluvio-DgoyKNgPiFQ-unsplash.jpg"
           width={600}
-          alt="Shiva"
+          alt="codingImage"
           placeholder="blurred"
           quality="40"
           className="w-2/4 md:w-full"

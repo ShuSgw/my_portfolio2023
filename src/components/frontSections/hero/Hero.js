@@ -11,7 +11,7 @@ const Hero = ({subHead}) => {
           <StaticImage
             src="../../../../content/images/face.png"
             width={600}
-            alt="Shiva"
+            alt="profile"
             placeholder="blurred"
             quality="40"
           />
