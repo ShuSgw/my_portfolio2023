@@ -11,3 +11,7 @@ gatsby develop
 ## packages
 
 - [react-emojis](https://www.sejuku.net/blog/)
+
+## node version
+
+v18.0.0
