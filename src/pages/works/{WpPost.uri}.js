@@ -1,6 +1,6 @@
 import React from "react";
 import {graphql} from "gatsby";
-import {useI18next, withTranslation} from "gatsby-plugin-react-i18next";
+import {useI18next} from "gatsby-plugin-react-i18next";
 import Layout from "../../components/global/layout/Layout";
 
 const Post = ({data}) => {

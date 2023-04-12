@@ -6,6 +6,8 @@ import {GatsbyImage} from "gatsby-plugin-image";
 
 import Layout from "../components/global/layout/Layout";
 
+import Pagination from "../components/works/pagination/pagination";
+
 const Works = ({data}) => {
   const {languages, originalPath} = useI18next();
   console.log(originalPath);
@@ -55,6 +57,8 @@ const Works = ({data}) => {
             </Link>
           </div>
         ))}
+
+        <Pagination totalCount={data.allWpPost.totalCount} />
       </Layout>
     </>
   );
@@ -71,7 +75,7 @@ export const indexLang = graphql`
         }
       }
     }
-    allWpPost {
+    allWpPost(limit: 2) {
       edges {
         node {
           id
@@ -96,6 +100,7 @@ export const indexLang = graphql`
           }
         }
       }
+      totalCount
     }
   }
 `;
