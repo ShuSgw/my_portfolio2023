@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from "react";
-import {Link} from "gatsby";
+import React, {useState} from "react";
 
 import Header from "../header/Header";
 import Footer from "../footer/Footer";

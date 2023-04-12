@@ -1,11 +1,12 @@
 import React from "react";
 import "../styles/global.css";
-import {graphql} from "gatsby";
+import {Link, graphql} from "gatsby";
 import {useI18next, useTranslation} from "gatsby-plugin-react-i18next";
+import {GatsbyImage} from "gatsby-plugin-image";
 
 import Layout from "../components/global/layout/Layout";
 
-const Works = () => {
+const Works = ({data}) => {
   const {languages, originalPath} = useI18next();
   console.log(originalPath);
   const {t} = useTranslation();
@@ -22,6 +23,38 @@ const Works = () => {
         <p className="pt-6 font-body leading-relaxed text-grey-20">
           {t("worksPage")}
         </p>
+
+        {data.allWpPost.edges.map(({node}) => (
+          <div key={node.id} className="p-Home-block">
+            {node.featuredImage ? (
+              <GatsbyImage
+                image={
+                  node.featuredImage.node.localFile.childImageSharp
+                    .gatsbyImageData
+                }
+                alt={
+                  node.featuredImage.node.altText
+                    ? node.featuredImage.node.altText
+                    : ""
+                }
+                as={`figure`}
+                style={{aspectRatio: "25/14"}}
+              />
+            ) : (
+              <div>No Image </div>
+            )}
+            <h2 className="p-Home-heading">{node.title}</h2>
+            <div
+              className="p-Home-desc"
+              dangerouslySetInnerHTML={{__html: node.excerpt}}
+            />
+            <Link to={`/works${node.uri}`}>
+              <p className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                詳細チェック
+              </p>
+            </Link>
+          </div>
+        ))}
       </Layout>
     </>
   );
@@ -35,6 +68,32 @@ export const indexLang = graphql`
           ns
           data
           language
+        }
+      }
+    }
+    allWpPost {
+      edges {
+        node {
+          id
+          title
+          excerpt
+          uri
+          featuredImage {
+            node {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    quality: 100
+                    placeholder: BLURRED
+                    layout: CONSTRAINED
+                    transformOptions: {cropFocus: CENTER}
+                    width: 500
+                    height: 280
+                  )
+                }
+              }
+            }
+          }
         }
       }
     }
