@@ -16,6 +16,12 @@ module.exports = {
     "gatsby-plugin-dark-mode",
     "gatsby-plugin-postcss",
     {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://api.shagawa.work/graphql`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/locales`,

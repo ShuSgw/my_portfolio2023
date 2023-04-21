@@ -10,7 +10,7 @@ import About from "../components/frontSections/about/About";
 
 import Experience from "../components/frontSections/experience/Experience";
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
   const {languages, originalPath} = useI18next();
   const {t} = useTranslation();
 

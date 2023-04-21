@@ -24,7 +24,7 @@ const Hero = ({subHead}) => {
             I'm Shuhei,
           </div>
           <div className="max-w-3xl mb-3 text-2xl font-bold">
-            a web developer based in Vancouver.
+            a web developer based in Japan.
           </div>
           <p>{subHead}</p>
         </div>
