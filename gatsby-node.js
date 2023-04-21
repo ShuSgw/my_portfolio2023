@@ -23,11 +23,17 @@ exports.createPages = async ({graphql, actions}) => {
   for (let i = 0; i < pageCount; i++) {
     createPage({
       path: `/works/${i + 1}`,
-      component: path.resolve("src/template/blog-page.js"),
+      component: path.resolve("src/template/works-page.js"),
       context: {
         limit: PerPage,
         skip: i * PerPage,
+        thePage: i + 1,
       },
     });
   }
+
+  // createPage({
+  //   path: `/works/sample`,
+  //   component: path.resolve("src/pages/contact.js"),
+  // });
 };
