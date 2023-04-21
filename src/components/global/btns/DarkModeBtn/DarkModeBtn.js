@@ -15,7 +15,6 @@ const ThemeBtn = () => {
               unchecked: <BsFillSunFill />,
             }}
             onChange={(e) => toggleTheme(e.target.checked ? "dark" : "light")}
-            checked={theme === "dark"}
           />
         )}
       </ThemeToggler>
