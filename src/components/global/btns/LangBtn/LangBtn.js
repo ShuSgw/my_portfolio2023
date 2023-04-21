@@ -4,11 +4,11 @@ import {Link as LangLink} from "gatsby-plugin-react-i18next";
 
 const LangBtn = ({langInfo}) => {
   return (
-    <nav className="block items-center md:w-auto ml-5">
+    <nav className="langBtn flex gap-2 items-center md:w-auto ml-5">
       {langInfo.languages.map((lng) => (
         <LangLink
           key={lng}
-          className="text-white no-underline ml-1 uppercase"
+          className="no-underline uppercase"
           to={langInfo.originalPath}
           language={lng}
         >
