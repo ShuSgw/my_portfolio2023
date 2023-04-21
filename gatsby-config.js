@@ -1,10 +1,38 @@
 module.exports = {
   plugins: [
+    // {
+    //   resolve: "gatsby-theme-portfolio-minimal",
+    //   options: {
+    //     contentDirectory: null,
+    //     blogSettings: {
+    //       path: null, // Defines the slug for the blog listing page
+    //       usePathPrefixForArticles: false, // Default true (i.e. path will be /blog/first-article)
+    //     },
+    //   },
+    // },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    "gatsby-plugin-dark-mode",
+    "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://api.shagawa.work/graphql`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/locales`,
         name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `companyLogo`,
+        path: `${__dirname}/src/images/companyLogo`,
       },
     },
     {
@@ -15,11 +43,6 @@ module.exports = {
         defaultLanguage: `en`,
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    "gatsby-plugin-dark-mode",
-    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-htaccess",
       options: {},
@@ -33,30 +56,6 @@ module.exports = {
           ErrorDocument 404 /error_pages/404.html
           ErrorDocument 500 /error_pages/500.html
         `,
-    },
-    {
-      resolve: "gatsby-theme-portfolio-minimal",
-      options: {
-        manifestSettings: {
-          favicon: "./content/images/favicon.png", // Path is relative to the root
-          siteName: "My Minimal Portfolio", // Used in manifest.json
-          shortName: "Portfolio", // Used in manifest.json
-          startUrl: "/", // Used in manifest.json
-          backgroundColor: "#FFFFFF", // Used in manifest.json
-          themeColor: "#000000", // Used in manifest.json
-          display: "minimal-ui", // Used in manifest.json
-        },
-        contentDirectory: "./content",
-        blogSettings: {
-          path: "/works", // Defines the slug for the blog listing page
-          usePathPrefixForArticles: false, // Default true (i.e. path will be /blog/first-article)
-        },
-        // googleAnalytics: {
-        //     trackingId: "UA-XXXXXX-X",
-        //     anonymize: true, // Default true
-        //     environments: ["production", "development"] // Default ["production"]
-        // }
-      },
     },
   ],
 };
