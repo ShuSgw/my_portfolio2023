@@ -13,12 +13,39 @@ exports.createPages = async ({graphql, actions}) => {
     `
   );
 
+  const jpPostCount = await graphql(
+    `
+      {
+        allWpCategory(filter: {slug: {eq: "japanese"}}) {
+          nodes {
+            count
+          }
+        }
+      }
+    `
+  );
+
+  const enPostCount = await graphql(
+    `
+      {
+        allWpCategory(filter: {slug: {eq: "english"}}) {
+          nodes {
+            count
+          }
+        }
+      }
+    `
+  );
+
   if (result.errors) {
     throw result.errors;
   }
 
   const PerPage = 2;
   const pageCount = Math.ceil(result.data.allWpPost.totalCount / PerPage);
+
+  const pageCountJp = jpPostCount.data.allWpCategory.nodes[0].count;
+  const pageCountEn = enPostCount.data.allWpCategory.nodes[0].count;
 
   for (let i = 0; i < pageCount; i++) {
     createPage({
@@ -28,12 +55,9 @@ exports.createPages = async ({graphql, actions}) => {
         limit: PerPage,
         skip: i * PerPage,
         thePage: i + 1,
+        pageCountJp: pageCountJp,
+        pageCountEn: pageCountEn,
       },
     });
   }
-
-  // createPage({
-  //   path: `/works/sample`,
-  //   component: path.resolve("src/pages/contact.js"),
-  // });
 };

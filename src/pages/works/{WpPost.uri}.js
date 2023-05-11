@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {graphql} from "gatsby";
 import {useI18next} from "gatsby-plugin-react-i18next";
 import Layout from "../../components/global/layout/Layout";
 
+import "@wordpress/block-library/build-style/style.css";
+import "@wordpress/block-library/build-style/theme.css";
+
 const Post = ({data}) => {
-  const {languages, originalPath, language} = useI18next();
-  console.log(language);
+  const {languages, originalPath, language, i18n} = useI18next();
+
   const langInfo = {
     languages,
     originalPath,
