@@ -9,7 +9,7 @@ import Cards from "../components/works/cards/Cards";
 import Pagination from "../components/works/pagination/pagination";
 
 const Works = ({data, pageContext}) => {
-  const {languages, originalPath} = useI18next();
+  const {languages, originalPath, language} = useI18next();
   console.log(originalPath);
   const {t} = useTranslation();
 
@@ -18,15 +18,36 @@ const Works = ({data, pageContext}) => {
     originalPath,
   };
 
+  const makeTheLangPagenation = (theCurrentLang) => {
+    let totalCountOfTheLang = pageContext.pageCountEn;
+
+    if (theCurrentLang == "ja") {
+      totalCountOfTheLang = pageContext.pageCountJp;
+    }
+
+    return (
+      <Pagination
+        totalCount={totalCountOfTheLang}
+        thePage={pageContext.thePage}
+      />
+    );
+  };
+
+  console.log(language, "aaa");
   return (
     <>
       <Layout langInfo={langInfo}>
         <div className="font-bold font-header text-4xl lg:text-4xl">Works</div>
-        <Cards list={data.allWpPost.edges} />
-        <Pagination
+        <Cards list={data.allWpPost.edges} theCurrentLang={language} />
+        {makeTheLangPagenation(language)}
+        {/* <Pagination
           totalCount={data.allWpPost.totalCount}
           thePage={pageContext.thePage}
-        />
+        /> */}
+        {/* <Pagination
+          totalCount={pageContext.pageCountJp}
+          thePage={pageContext.thePage}
+        /> */}
       </Layout>
     </>
   );
@@ -50,6 +71,12 @@ export const indexLang = graphql`
           title
           excerpt
           uri
+          categories {
+            nodes {
+              slug
+              name
+            }
+          }
           featuredImage {
             node {
               localFile {
