@@ -19,6 +19,8 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: `https://api.shagawa.work/graphql`,
+        useACF: true,
+        auth: {},
       },
     },
     {
