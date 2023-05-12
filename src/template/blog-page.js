@@ -2,6 +2,7 @@ import React from "react";
 import {graphql, Link} from "gatsby";
 import Pagination from "../components/works/pagination/pagination";
 
+// work page のサンプルとして使用
 const BlogPage = ({data}) => {
   return (
     <div>
