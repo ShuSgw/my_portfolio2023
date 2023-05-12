@@ -1,17 +1,29 @@
 import React from "react";
 import Card from "./Card";
-import {Link, graphql} from "gatsby";
-import {GatsbyImage} from "gatsby-plugin-image";
 
-const Cards = ({list}) => {
-  console.log(list);
+const Cards = ({list, theCurrentLang}) => {
   return list.map((cardItem) => {
     cardItem = cardItem.node;
+
+    let allTheContents = {
+      title: cardItem.title,
+      excerpt: cardItem.excerpt,
+    };
+
+    if (
+      theCurrentLang == "en" &&
+      cardItem.english.englishTitle &&
+      cardItem.english.englishExcerpt
+    ) {
+      allTheContents.title = cardItem.english.englishTitle;
+      allTheContents.excerpt = cardItem.english.englishExcerpt;
+    }
+
     return (
       <Card
-        ttl={cardItem.title}
+        ttl={allTheContents.title}
         key={cardItem.id}
-        excerpt={cardItem.excerpt}
+        excerpt={allTheContents.excerpt}
         featuredImage={cardItem.featuredImage}
         uri={cardItem.uri}
       />
