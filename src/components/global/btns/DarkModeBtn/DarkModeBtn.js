@@ -9,12 +9,12 @@ const ThemeBtn = () => {
       <ThemeToggler>
         {({theme, toggleTheme}) => (
           <Toggle
-            defaultChecked={false}
             icons={{
               checked: <MdDarkMode />,
               unchecked: <BsFillSunFill />,
             }}
             onChange={(e) => toggleTheme(e.target.checked ? "dark" : "light")}
+            checked={theme == "dark"}
           />
         )}
       </ThemeToggler>
