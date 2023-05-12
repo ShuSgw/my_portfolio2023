@@ -12,7 +12,7 @@ const SideNav = ({slideToggle}) => {
       title: `Home`,
     },
     {
-      route: `/works/1`,
+      route: `/worklist/1`,
       title: `Works`,
     },
     {

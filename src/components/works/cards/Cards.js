@@ -1,34 +1,33 @@
 import React from "react";
 import Card from "./Card";
-import {Link, graphql} from "gatsby";
-import {GatsbyImage} from "gatsby-plugin-image";
 
 const Cards = ({list, theCurrentLang}) => {
-  const langFilter = (theCurrentLang) => {
-    if (theCurrentLang == "ja") {
-      return "japanese";
-    } else {
-      return "english";
-    }
-  };
   return list.map((cardItem) => {
     cardItem = cardItem.node;
-    let cardCats = cardItem.categories.nodes;
+
+    let allTheContents = {
+      title: cardItem.title,
+      excerpt: cardItem.excerpt,
+    };
+
     if (
-      cardCats.some((cardCat) =>
-        cardCat.slug.includes(langFilter(theCurrentLang))
-      )
+      theCurrentLang == "en" &&
+      cardItem.english.englishTitle &&
+      cardItem.english.englishExcerpt
     ) {
-      return (
-        <Card
-          ttl={cardItem.title}
-          key={cardItem.id}
-          excerpt={cardItem.excerpt}
-          featuredImage={cardItem.featuredImage}
-          uri={cardItem.uri}
-        />
-      );
+      allTheContents.title = cardItem.english.englishTitle;
+      allTheContents.excerpt = cardItem.english.englishExcerpt;
     }
+
+    return (
+      <Card
+        ttl={allTheContents.title}
+        key={cardItem.id}
+        excerpt={allTheContents.excerpt}
+        featuredImage={cardItem.featuredImage}
+        uri={cardItem.uri}
+      />
+    );
   });
 };
 

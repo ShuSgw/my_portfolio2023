@@ -14,13 +14,30 @@ const Post = ({data}) => {
     originalPath,
   };
 
+  let allTheContents = {
+    title: data.wpPost.title,
+    content: data.wpPost.content,
+  };
+
+  if (
+    language == "en" &&
+    data.wpPost.english.englishTitle &&
+    data.wpPost.english.englishContents
+  ) {
+    allTheContents.title = data.wpPost.english.englishTitle;
+    allTheContents.content = data.wpPost.english.englishContents;
+  }
+
   return (
     <>
       <Layout langInfo={langInfo}>
         <div className="font-bold font-header text-4xl lg:text-4xl">
-          {data.wpPost.title}
+          {allTheContents.title}
         </div>
-        <div dangerouslySetInnerHTML={{__html: data.wpPost.content}} />
+        <div
+          className="pt-7"
+          dangerouslySetInnerHTML={{__html: allTheContents.content}}
+        />
       </Layout>
     </>
   );
@@ -40,6 +57,12 @@ export const query = graphql`
     wpPost(id: {eq: $id}) {
       title
       content
+      english {
+        englishContents
+        englishTitle
+        fieldGroupName
+        englishExcerpt
+      }
     }
   }
 `;

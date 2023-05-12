@@ -19,7 +19,7 @@ const Pagination = ({totalCount, thePage}) => {
           <li key={index}>
             <Link
               className={`${number !== thePage ? otherNation : currentNation}`}
-              to={`/works/${number}`}
+              to={`/worklist/${number}`}
             >
               {number}
             </Link>
