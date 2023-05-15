@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/global.css";
+// import "../styles/global.css";
 import {Link, graphql} from "gatsby";
 import {useI18next, useTranslation} from "gatsby-plugin-react-i18next";
-import {GatsbyImage} from "gatsby-plugin-image";
 
 import Layout from "../components/global/layout/Layout";
 import Cards from "../components/works/cards/Cards";
@@ -49,6 +48,12 @@ export const indexLang = graphql`
           title
           excerpt
           uri
+          date
+          tags {
+            nodes {
+              name
+            }
+          }
           english {
             englishContents
             englishTitle
