@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import "../../../styles/global.css";
+import "@wordpress/block-library/build-style/style.css";
+import "@wordpress/block-library/build-style/theme.css";
 
+import React, {useState} from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-
 import Sidebar from "react-sidebar";
 
 import Sidenav from "../sidenav/SideNav";

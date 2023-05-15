@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/global.css";
+// import "../styles/global.css";
 import {graphql} from "gatsby";
 import {useI18next, useTranslation} from "gatsby-plugin-react-i18next";
 
