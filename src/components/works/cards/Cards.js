@@ -18,7 +18,7 @@ const Cards = ({list, theCurrentLang}) => {
       allTheContents.title = cardItem.english.englishTitle;
       allTheContents.excerpt = cardItem.english.englishExcerpt;
     }
-
+    console.log(cardItem);
     return (
       <Card
         ttl={allTheContents.title}
@@ -26,6 +26,8 @@ const Cards = ({list, theCurrentLang}) => {
         excerpt={allTheContents.excerpt}
         featuredImage={cardItem.featuredImage}
         uri={cardItem.uri}
+        date={cardItem.date}
+        tags={cardItem.tags.nodes}
       />
     );
   });
