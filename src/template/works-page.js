@@ -41,7 +41,7 @@ export const indexLang = graphql`
         }
       }
     }
-    allWpPost(limit: $limit, skip: $skip) {
+    allWpPost(limit: $limit, skip: $skip, sort: {fields: date, order: DESC}) {
       edges {
         node {
           id
