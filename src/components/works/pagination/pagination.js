@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "gatsby";
 
 const Pagination = ({totalCount, thePage}) => {
-  const PER_PAGE = 2;
+  const PER_PAGE = 5;
 
   const range = (start, end) =>
     [...Array(end - start + 1)].map((_, i) => start + i);

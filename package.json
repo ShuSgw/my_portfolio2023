@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@wordpress/block-library": "^8.9.0",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
     "gatsby": "^5.7.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-htaccess": "^1.4.0",

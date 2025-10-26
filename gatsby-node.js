@@ -17,7 +17,7 @@ exports.createPages = async ({graphql, actions}) => {
     throw result.errors;
   }
 
-  const PerPage = 2;
+  const PerPage = 5;
   const pageCount = Math.ceil(result.data.allWpPost.totalCount / PerPage);
 
   for (let i = 0; i < pageCount; i++) {

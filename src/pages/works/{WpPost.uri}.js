@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {graphql} from "gatsby";
+import {graphql, Link} from "gatsby";
 import {useI18next} from "gatsby-plugin-react-i18next";
 import Layout from "../../components/global/layout/Layout";
 import {AiFillGithub} from "react-icons/ai";
@@ -35,6 +35,9 @@ const Post = ({data}) => {
   return (
     <>
       <Layout langInfo={langInfo}>
+        <Link to="/worklist/1" 
+        className="inline-flex items-center text-black dark:text-white underline hover:no-underline mb-4"
+        >← Back to Works</Link>
         <div className="flex items-center space-x-2 text-sm">
           {allTheContents.date}
         </div>
