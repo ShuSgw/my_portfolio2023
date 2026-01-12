@@ -6,9 +6,7 @@
     "dev": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "check": "gatsby develop -H 0.0.0.0",
-    "deploy": "npm run build && npm run deploy:main",
-    "deploy:main": "git checkout main && cp -r public/* . && git add . && git commit -m 'Deploy build' && git push origin main && git checkout dev"
+    "check": "gatsby develop -H 0.0.0.0"
   },
   "dependencies": {
     "@wordpress/block-library": "^8.9.0",
