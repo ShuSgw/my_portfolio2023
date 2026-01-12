@@ -1,0 +1,16 @@
+# Development branch gitignore
+node_modules/
+.cache/
+public/
+.DS_Store
+.env
+.env.local
+.env.development
+.env.production
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea/
+.vscode/
+*.swp
+*.swo
