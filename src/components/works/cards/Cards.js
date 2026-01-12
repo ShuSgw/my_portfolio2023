@@ -1,7 +1,8 @@
 import React from "react";
 import Card from "./Card";
+import formatDate from "../../../utils/formatDate";
 
-const Cards = ({list, theCurrentLang}) => {
+const Cards = ({ list, theCurrentLang }) => {
   return list.map((cardItem) => {
     cardItem = cardItem.node;
 
@@ -19,6 +20,9 @@ const Cards = ({list, theCurrentLang}) => {
       allTheContents.excerpt = cardItem.english.englishExcerpt;
     }
     console.log(cardItem);
+
+    const formattedDate = formatDate(cardItem.date, theCurrentLang);
+
     return (
       <Card
         ttl={allTheContents.title}
@@ -26,7 +30,7 @@ const Cards = ({list, theCurrentLang}) => {
         excerpt={allTheContents.excerpt}
         featuredImage={cardItem.featuredImage}
         uri={cardItem.uri}
-        date={cardItem.date}
+        date={formattedDate}
         tags={cardItem.tags.nodes}
       />
     );

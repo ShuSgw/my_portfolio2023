@@ -1,4 +1,11 @@
 module.exports = {
+  siteMetadata: {
+    title: "sgw_stuido",
+    description: "Portfolio site showcasing web development projects and works",
+    siteUrl: "https://shagawa.work",
+    author: "sgw",
+    image: "/og-image.jpg",
+  },
   plugins: [
     // {
     //   resolve: "gatsby-theme-portfolio-minimal",
@@ -10,6 +17,7 @@ module.exports = {
     //     },
     //   },
     // },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

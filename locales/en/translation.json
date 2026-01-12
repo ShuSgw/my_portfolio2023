@@ -4,6 +4,14 @@
     "aboutMe": "Shuhei is a Japan-based Front-end Developer. He received his Bachelor's of Fine Arts in 2015 from Kyushu-Sangyo University, Japan and certificate of New Media Design and Web Development in 2018 from British Columbia Institute of Technology. He is a very hard worker and likes grasping the newest technologies. Test chnage. Skills: HTML5, CSS/Sass, JavaScript(ES6), React.js/Redux, WordPress, PHP, Woocommerce, MySQL, Web API, Ajax, JSON, Bootstrap, Git, Photoshop / Illustrator, Responsive Design, SVG Animation, GSAP.",
     "timeline": [
       {
+        "company": "Medical Frontier",
+        "jobTitle": "Lead WordPress developer",
+        "period": "2023 3月 - 現在",
+        "area": "日本、東京",
+        "srcImg": "drbateryLogo",
+        "description": "An organization providing operational support to medical clinics. As a Front-End, WordPress, and PHP Engineer, I am mainly responsible for the operation, maintenance, and development of our company’s website and internal systems. My tech stack includes HTML, SCSS, and JavaScript (jQuery), and I also handle backend implementation when needed using PHP, WordPress, and Node.js. Additionally, I develop automation tools to streamline workflows and reduce workload."
+      },
+      {
         "company": "Richmond International Technology Corp.",
         "jobTitle": "Web developer",
         "period": "Mar 2022 - Jan 2023",
