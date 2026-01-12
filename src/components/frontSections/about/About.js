@@ -1,12 +1,12 @@
 import React from "react";
-import {StaticImage} from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
-const About = ({aboutMe}) => {
+const About = ({ aboutMe }) => {
   return (
     <div className="flex flex-col items-center pt-16 md:pt-20 md:flex-row">
       <div className="w-full md:w-3/5">
         <div className="font-bold font-header text-4xl lg:text-4xl">
-          About Me
+          About Me Hello
         </div>
         <p className="pt-6 font-body leading-relaxed text-grey-20">{aboutMe}</p>
       </div>

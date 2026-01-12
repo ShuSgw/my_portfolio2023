@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
   const seoDescription =
     language === "en"
       ? "My Portfolio website"
-      : "ワードプレスが得意なフロントエンド開発者。test/test";
+      : "ワードプレスが得意なフロントエンド開発者。";
 
   return (
     <>
