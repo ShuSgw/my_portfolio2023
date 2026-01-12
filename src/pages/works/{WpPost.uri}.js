@@ -1,15 +1,17 @@
-import React, {useEffect} from "react";
-import {graphql, Link} from "gatsby";
-import {useI18next} from "gatsby-plugin-react-i18next";
+import React, { useEffect } from "react";
+import { graphql, Link } from "gatsby";
+import { useI18next } from "gatsby-plugin-react-i18next";
 import Layout from "../../components/global/layout/Layout";
-import {AiFillGithub} from "react-icons/ai";
-import {MdComputer} from "react-icons/md";
-import {GatsbyImage} from "gatsby-plugin-image";
+import { AiFillGithub } from "react-icons/ai";
+import { MdComputer } from "react-icons/md";
+import { GatsbyImage } from "gatsby-plugin-image";
+import SEO from "../../components/seo";
 
 import makeTagList from "../../components/global/makeTagList/makeTagList";
+import formatDate from "../../utils/formatDate";
 
-const Post = ({data}) => {
-  const {languages, originalPath, language, i18n} = useI18next();
+const Post = ({ data }) => {
+  const { languages, originalPath, language, i18n } = useI18next();
   var sample;
   const langInfo = {
     languages,
@@ -19,6 +21,7 @@ const Post = ({data}) => {
   let allTheContents = {
     title: data.wpPost.title,
     content: data.wpPost.content,
+    excerpt: data.wpPost.excerpt,
     date: data.wpPost.date,
     tags: data.wpPost.tags.nodes,
   };
@@ -30,16 +33,29 @@ const Post = ({data}) => {
   ) {
     allTheContents.title = data.wpPost.english.englishTitle;
     allTheContents.content = data.wpPost.english.englishContents;
+    allTheContents.excerpt =
+      data.wpPost.english.englishExcerpt || data.wpPost.excerpt;
   }
 
   return (
     <>
+      <SEO
+        title={allTheContents.title}
+        description={
+          allTheContents.excerpt || allTheContents.content.substring(0, 160)
+        }
+        article={true}
+        lang={language}
+      />
       <Layout langInfo={langInfo}>
-        <Link to="/worklist/1" 
-        className="inline-flex items-center text-black dark:text-white underline hover:no-underline mb-4"
-        >← Back to Works</Link>
+        <Link
+          to="/worklist/1"
+          className="inline-flex items-center text-black dark:text-white underline hover:no-underline mb-4"
+        >
+          ← Back to Works
+        </Link>
         <div className="flex items-center space-x-2 text-sm">
-          {allTheContents.date}
+          {formatDate(allTheContents.date, language)}
         </div>
         <div className="flex items-end">
           <div className="font-bold font-header text-4xl lg:text-4xl pt-1">
@@ -96,7 +112,7 @@ const Post = ({data}) => {
         />
         <div
           className="pt-7 gutenberg"
-          dangerouslySetInnerHTML={{__html: allTheContents.content}}
+          dangerouslySetInnerHTML={{ __html: allTheContents.content }}
         />
       </Layout>
     </>
@@ -105,7 +121,7 @@ const Post = ({data}) => {
 
 export const query = graphql`
   query ($id: String!, $language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -114,9 +130,10 @@ export const query = graphql`
         }
       }
     }
-    wpPost(id: {eq: $id}) {
+    wpPost(id: { eq: $id }) {
       title
       content
+      excerpt
       date
       featuredImage {
         node {
@@ -126,7 +143,7 @@ export const query = graphql`
                 quality: 100
                 placeholder: BLURRED
                 layout: CONSTRAINED
-                transformOptions: {cropFocus: CENTER}
+                transformOptions: { cropFocus: CENTER }
                 width: 2000
                 height: 1500
               )

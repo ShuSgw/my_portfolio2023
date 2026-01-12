@@ -6,6 +6,7 @@ import {useI18next, useTranslation} from "gatsby-plugin-react-i18next";
 import Layout from "../components/global/layout/Layout";
 import Cards from "../components/works/cards/Cards";
 import Pagination from "../components/works/pagination/pagination";
+import SEO from "../components/seo";
 
 const Works = ({data, pageContext}) => {
   const {languages, originalPath, language} = useI18next();
@@ -15,9 +16,16 @@ const Works = ({data, pageContext}) => {
     languages,
     originalPath,
   };
+  const seoTitle =
+    language === "en" ? "Works - Portfolio" : "制作実績 - ポートフォリオ";
+  const seoDescription =
+    language === "en"
+      ? "My web development works"
+      : "ウェブ制作やアプリなどの実績一覧です";
 
   return (
     <>
+      <SEO title={seoTitle} description={seoDescription} lang={language} />
       <Layout langInfo={langInfo}>
         <div className="font-bold font-header text-4xl lg:text-4xl">Works</div>
         <Cards list={data.allWpPost.edges} theCurrentLang={language} />

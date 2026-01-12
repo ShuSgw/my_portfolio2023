@@ -4,6 +4,11 @@ import {Link} from "gatsby";
 const Pagination = ({totalCount, thePage}) => {
   const PER_PAGE = 5;
 
+  // 投稿数が5以下の場合はページネーションを表示しない
+  if (totalCount <= PER_PAGE) {
+    return null;
+  }
+
   const range = (start, end) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
 
