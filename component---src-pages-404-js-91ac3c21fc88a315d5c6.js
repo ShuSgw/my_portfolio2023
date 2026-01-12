@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksgw_studio=self.webpackChunksgw_studio||[]).push([[125],{3331:function(e,t,l){l.r(t);var n=l(6540);t.default=()=>n.createElement(n.Fragment,null,n.createElement("h1",null,"このページは404ページです"),n.createElement("p",null,"アクセスしたURLに記事はありません"))}}]);
+//# sourceMappingURL=component---src-pages-404-js-91ac3c21fc88a315d5c6.js.map
