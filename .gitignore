@@ -19,6 +19,10 @@ dist
 # (see gatsby-node.js -> /cv/ basic auth + deploy.yml rsync --exclude).
 static/cv/*.pdf
 
+# SFTP extension config — contains server connection details.
+sftp.json
+.vscode/sftp.json
+
 # Logs
 logs
 *.log
