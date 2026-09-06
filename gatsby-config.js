@@ -1,5 +1,5 @@
-// Gatsby only auto-loads .env.* into the browser bundle; Node-side code
-// (gatsby-config.js / gatsby-node.js) has to load it explicitly.
+// Gatsby がブラウザ向けバンドルに自動で読み込むのは .env.* のみ。
+// Node 側のコード（gatsby-config.js / gatsby-node.js）では明示的に読み込む必要がある。
 require(`dotenv`).config({
   path: `.env.${process.env.NODE_ENV || `development`}`,
 });
@@ -20,14 +20,14 @@ module.exports = {
     //   options: {
     //     contentDirectory: null,
     //     blogSettings: {
-    //       path: null, // Defines the slug for the blog listing page
-    //       usePathPrefixForArticles: false, // Default true (i.e. path will be /blog/first-article)
+    //       path: null, // ブログ一覧ページのスラッグを指定する
+    //       usePathPrefixForArticles: false, // デフォルトは true（例: パスが /blog/first-article になる）
     //     },
     //   },
     // },
     `gatsby-plugin-react-helmet`,
-    // Google Analytics (GA4). Only enabled when GA_MEASUREMENT_ID is set
-    // (see .env.production / GitHub Actions secret) so dev builds stay untracked.
+    // Google Analytics (GA4)。GA_MEASUREMENT_ID がセットされている時だけ有効化する
+    // （.env.production / GitHub Actions secret を参照）。dev ビルドは計測対象外のままにする。
     ...(gaMeasurementId
       ? [
           {
@@ -42,6 +42,23 @@ module.exports = {
           },
         ]
       : []),
+    // siteMetadata.siteUrl から /sitemap-index.xml（＋ /sitemap-0.xml）を生成する。
+    // Google Search Console に登録済み。
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        // `excludes` はプラグインのデフォルト値を置き換えるため、デフォルトの 404 系エントリを
+        // ここで再掲しつつ、i18n プレフィックス付きのもの（/ja/404 など）も併せて指定する。
+        excludes: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+          `/offline-plugin-app-shell-fallback`,
+          `/*/404`,
+          `/*/404.html`,
+        ],
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
