@@ -1,3 +1,11 @@
+// Gatsby only auto-loads .env.* into the browser bundle; Node-side code
+// (gatsby-config.js / gatsby-node.js) has to load it explicitly.
+require(`dotenv`).config({
+  path: `.env.${process.env.NODE_ENV || `development`}`,
+});
+
+const gaMeasurementId = process.env.GA_MEASUREMENT_ID;
+
 module.exports = {
   siteMetadata: {
     title: "sgw_studio",
@@ -18,6 +26,22 @@ module.exports = {
     //   },
     // },
     `gatsby-plugin-react-helmet`,
+    // Google Analytics (GA4). Only enabled when GA_MEASUREMENT_ID is set
+    // (see .env.production / GitHub Actions secret) so dev builds stay untracked.
+    ...(gaMeasurementId
+      ? [
+          {
+            resolve: `gatsby-plugin-google-gtag`,
+            options: {
+              trackingIds: [gaMeasurementId],
+              pluginConfig: {
+                head: false,
+                respectDNT: true,
+              },
+            },
+          },
+        ]
+      : []),
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
