@@ -44,5 +44,6 @@ jobs:
           rsync -avz --delete \
             -e "ssh -p ${{ secrets.SSH_PORT }}" \
             --exclude=.well-known/ \
+            --exclude=cv/shagawa_cv.pdf \
             public/ \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/u303929511/domains/shagawa.work/public_html/

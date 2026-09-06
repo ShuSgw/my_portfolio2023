@@ -15,6 +15,10 @@ dist
 .env.development
 .env.production
 
+# CV PDF — never commit. Kept private, uploaded to the server by hand
+# (see gatsby-node.js -> /cv/ basic auth + deploy.yml rsync --exclude).
+static/cv/*.pdf
+
 # Logs
 logs
 *.log
